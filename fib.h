@@ -23,7 +23,12 @@ typedef struct HeapFib
 	int qtdNos;
 } HeapFib;
 
+
+
+HeapFib * makeHeapFib();
+
 void insereFib( HeapFib * H,int chave);
+
 
 
 #endif

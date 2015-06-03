@@ -5,6 +5,9 @@
 
 void decreaseKey(HeapFib* H, NoHeapFib* x ,int k)
 {
+    assert(H);
+    assert(x);
+
     if(k > x->chave)
     {
         printf("Nova chave é maior que chave atual");
@@ -26,6 +29,10 @@ void decreaseKey(HeapFib* H, NoHeapFib* x ,int k)
 
 void cut(HeapFib* H, NoHeapFib* x, NoHeapFib* y)
 {
+    assert(H);
+    assert(x);
+    assert(y);
+
     if(y->filho == x)
     {
         if(x->esq == x)
@@ -53,6 +60,9 @@ void cut(HeapFib* H, NoHeapFib* x, NoHeapFib* y)
 
 void cascadingCut(HeapFib* H, NoHeapFib* y)
 {
+    assert(H);
+    assert(y);
+
     NoHeapFib* z = y->pai;
 
     if(z != NULL)

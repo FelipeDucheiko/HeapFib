@@ -29,6 +29,7 @@ HeapFib * makeHeapFib();
 
 void insereFib( HeapFib * H,int chave);
 
+void insereFibNoPronto( HeapFib* H, NoHeapFib* No);
 
 
 #endif

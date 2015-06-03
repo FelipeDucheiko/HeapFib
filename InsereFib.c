@@ -35,3 +35,19 @@ void insereFib( HeapFib* H,int chave){
 
 	(H -> qtdNos)++;
 }
+
+/*void insereFibNoPronto( HeapFib* H, NoHeapFib* No){
+	assert( H);
+
+	if ( H->noMin == NULL)
+		return;
+
+	No->esq = (H -> noMin)->esq;
+	(H -> noMin)->esq = No;
+	No->dir = (H -> noMin);
+	(No->esq)->dir = No;
+
+	if ( No->chave < (H -> noMin)->chave)
+			(H -> noMin) = No;	
+
+}*/

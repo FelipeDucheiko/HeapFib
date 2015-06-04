@@ -14,26 +14,26 @@ int main (void)
 	insereFib(H, 4);
 
 
-	decreaseKey(H, no , 5);
+	decreaseKey(H, no , 7);
 
 
 
-	no = extractMin(H);
+	NoHeapFib * no2 = extractMin(H);
 
-	printf("%d\n", no -> chave );
+	printf("%d\n", no2 -> chave );
 
 
-	no = extractMin(H);
+	NoHeapFib * no3 = extractMin(H);
 
-	printf("%d\n", no -> chave );
+	printf("%d\n", no3 -> chave );
 
-	no = extractMin(H);
+	NoHeapFib * no4 = extractMin(H);
 
-	printf("%d\n", no -> chave );
+	printf("%d\n", no4 -> chave );
 
-	no = extractMin(H);
+	NoHeapFib * no5 = extractMin(H);
 
-	printf("%d\n", no -> chave );
+	printf("%d\n", no5 -> chave );
 
 	return 0;
 }

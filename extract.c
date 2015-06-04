@@ -99,13 +99,13 @@ void consolidar(HeapFib * H)
 			}
 			else
 			{
-				troca = (H -> noMin) -> esq;
+				a[i] -> esq  = (H -> noMin) -> esq;
 				
 				(H -> noMin) -> esq = a[i];
 				a[i] -> dir = (H -> noMin);
 
-				troca -> dir = a[i];
-				a[i] -> esq = troca;
+				(a[i] -> esq) -> dir = a[i];
+
 
 				if(a[i] -> chave < (H -> noMin) -> chave)
 					H -> noMin = a[i];
@@ -125,9 +125,9 @@ NoHeapFib * extractMin(HeapFib * H)
 	NoHeapFib * filho = ext -> filho;
 	NoHeapFib * aux = NULL;
 
-	if(!ext)
+	if(ext)
 	{
-		if(!filho)
+		if(filho)
 		{
 			aux = filho -> esq;
 

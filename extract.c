@@ -14,7 +14,7 @@ HeapFib * makeHeapFib()
 
 }
 
-void HeapFibLink(HeapFib * H, NoHeapFib * y, NoHeapFib * x)
+void heapFibLink(HeapFib * H, NoHeapFib * y, NoHeapFib * x)
 {
 	assert(H);
 
@@ -72,7 +72,7 @@ void consolidar(HeapFib * H)
 			}
 			/*parei aquiiiio tem que chamar heapfiblink linha 11*/
 
-			heapfiblink(H, y, x);
+			heapFibLink(H, y, x);
 
 			a[grau] = NULL;
 			grau++;
@@ -82,7 +82,7 @@ void consolidar(HeapFib * H)
 
 		no = no -> dir;
 
-	}while(no != H -> noMin)
+	}while(no != H -> noMin);
 
 
 	H -> noMin = NULL;
@@ -161,14 +161,4 @@ NoHeapFib * extractMin(HeapFib * H)
 	}
 
 	return ext;
-}
-
-
-
-
-
-
-int main (void)
-{
-
 }

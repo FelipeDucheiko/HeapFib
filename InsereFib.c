@@ -4,11 +4,11 @@
 #include "fib.h"
 
 
-void insereFib( HeapFib* H,int chave){
+NoHeapFib * insereFib( HeapFib* H,int chave){
 	assert(H);
 
 	NoHeapFib* novoNo = (NoHeapFib*) malloc( sizeof( NoHeapFib));
-	if(novoNo == NULL) return;
+	if(novoNo == NULL) return novoNo;
 
 	novoNo->pai = NULL;
 	novoNo->filho = NULL;
@@ -34,9 +34,10 @@ void insereFib( HeapFib* H,int chave){
 	}
 
 	(H -> qtdNos)++;
+	return novoNo;
 }
 
-/*void insereFibNoPronto( HeapFib* H, NoHeapFib* No){
+void insereFibNoPronto( HeapFib* H, NoHeapFib* No){
 	assert( H);
 
 	if ( H->noMin == NULL)
@@ -50,4 +51,4 @@ void insereFib( HeapFib* H,int chave){
 	if ( No->chave < (H -> noMin)->chave)
 			(H -> noMin) = No;	
 
-}*/
+}

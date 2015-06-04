@@ -27,9 +27,21 @@ typedef struct HeapFib
 
 HeapFib * makeHeapFib();
 
-void insereFib( HeapFib * H,int chave);
+NoHeapFib * insereFib( HeapFib * H,int chave);
 
-void insereFibNoPronto( HeapFib* H, NoHeapFib* No);
+void insereFibNoPronto( HeapFib * H, NoHeapFib* No);
+
+void heapFibLink(HeapFib * H, NoHeapFib * y, NoHeapFib * x);
+
+void consolidar(HeapFib * H);
+
+NoHeapFib * extractMin(HeapFib * H);
+
+void decreaseKey(HeapFib* H, NoHeapFib* x ,int k);
+
+void cut(HeapFib* H, NoHeapFib* x, NoHeapFib* y);
+
+void cascadingCut(HeapFib* H, NoHeapFib* y);
 
 
 #endif

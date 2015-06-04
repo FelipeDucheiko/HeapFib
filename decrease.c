@@ -23,7 +23,7 @@ void decreaseKey(HeapFib* H, NoHeapFib* x ,int k)
         cascadingCut(H, y);
     }
 
-    if(x->chave < H->noMin)
+    if(x->chave < (H->noMin) -> chave)
         H->noMin = x;
 }
 

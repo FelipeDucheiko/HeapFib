@@ -4,13 +4,13 @@
 
 HeapFib * makeHeapFib()
 {
-	HeapFib * no = (HeapFib *) malloc(sizeof(HeapFib));
-	if(!no) return NULL;
+	HeapFib * heap = (HeapFib *) malloc(sizeof(HeapFib));
+	if(!heap) return NULL;
 
-	no -> noMin = NULL;
-	no -> qtdNos = 0;
+	heap -> noMin = NULL;
+	heap -> qtdNos = 0;
 
-	return no;
+	return heap;
 
 }
 
@@ -56,7 +56,7 @@ void consolidar(HeapFib * H)
 {	
 	NoHeapFib * a[H->qtdNos];
 	int i, grau;
-	NoHeapFib * x, * y, * troca;
+	NoHeapFib * y, * troca, * x = H -> noMin;
 
 
 	for(i = 0; i < H -> qtdNos; i++)
@@ -65,12 +65,11 @@ void consolidar(HeapFib * H)
 	}
 
 
-	NoHeapFib * no = H -> noMin;
+	//NoHeapFib * no = H -> noMin;
 	
 
 	do{
 
-		x = no;
 		grau = x -> grau;
 
 		while(a[grau])
@@ -88,12 +87,11 @@ void consolidar(HeapFib * H)
 			grau++;
 
 		}
-		printf("no = %d e no->dir = %d \n", no -> chave, no -> dir -> chave );
 	
 		a[grau] = x;
-		no = no -> dir;
+		x = x -> dir;
 
-	}while(no != H -> noMin);
+	}while(x != H -> noMin);
 
 
 	H -> noMin = NULL;
@@ -132,11 +130,15 @@ NoHeapFib * extractMin(HeapFib * H)
 	assert(H);
 
 	NoHeapFib * ext = H -> noMin;
-	NoHeapFib * filho = ext -> filho;
+	NoHeapFib * filho;
 	NoHeapFib * aux = NULL;
 
-	if(ext)
+
+	if(ext != NULL)
 	{
+
+		filho = ext -> filho;
+
 		if(filho)
 		{
 /*********************** Insere todos os filhos de ext na lista de raizes ***********************/
@@ -163,8 +165,9 @@ NoHeapFib * extractMin(HeapFib * H)
 		(ext -> dir) -> esq = ext -> esq;
 
 
-		if(ext != ext -> dir)
+		if(ext == ext -> dir)
 		{
+
 			H -> noMin = NULL;
 		}
 		else

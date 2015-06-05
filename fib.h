@@ -43,5 +43,9 @@ void cut(HeapFib* H, NoHeapFib* x, NoHeapFib* y);
 
 void cascadingCut(HeapFib* H, NoHeapFib* y);
 
+void imprimirHeapFib(HeapFib* H);
+
+void imprimir( NoHeapFib* No, NoHeapFib * pai);
+
 
 #endif
